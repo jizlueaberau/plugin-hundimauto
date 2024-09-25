@@ -243,9 +243,11 @@ final class Plugin {
 	 */
 	public function register_widgets( $widgets_manager ) {
 
-		require_once( __DIR__ . '/widgets/class-hgroup.php' );
+		require_once( __DIR__ . '/widgets/class-page-title.php' );
+		require_once( __DIR__ . '/widgets/class-contact-box.php' );
 
-		$widgets_manager->register( new Elementor_hGroup_Widget() );
+		$widgets_manager->register( new Elementor_Page_Title_Widget() );
+		$widgets_manager->register( new Elementor_Contact_Box_Widget() );
 
 	}
 
