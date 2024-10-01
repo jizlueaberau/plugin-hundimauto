@@ -40,7 +40,7 @@ class Elementor_Page_Title_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'hundimauto_page_title_content',
 			[
-				'label' 		=> esc_html__( 'Titel', 'plugin_hundimauto' ),
+				'label' 		=> esc_html__( 'Titel', 'plugin-hundimauto' ),
 				'type'			=> \Elementor\Controls_Manager::WYSIWYG,
 				'default'		=> '',
 				'placeholder'	=> ''
@@ -60,14 +60,14 @@ class Elementor_Page_Title_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'hundimauto_page_title_animation',
 			[
-				'label' 		=> esc_html__( 'Stil', 'plugin_hundimauto' ),
+				'label' 		=> esc_html__( 'Stil', 'plugin-hundimauto' ),
 				'type'			=> \Elementor\Controls_Manager::SELECT,
 				'default'		=> 'none',
 				'options'		=> [
-					'none'					=> esc_html__( 'None', 'plugin_hundimauto' ),
-					'fadeIn'				=> esc_html__( 'fadeIn', 'plugin_hundimauto' ),
-					'fadeInUp'				=> esc_html__( 'fadeInUp', 'plugin_hundimauto' ),
-					'fadeInUpBig'			=> esc_html__( 'fadeInUpBig', 'plugin_hundimauto' ),
+					'none'					=> esc_html__( 'None', 'plugin-hundimauto' ),
+					'fadeIn'				=> esc_html__( 'fadeIn', 'plugin-hundimauto' ),
+					'fadeInUp'				=> esc_html__( 'fadeInUp', 'plugin-hundimauto' ),
+					'fadeInUpBig'			=> esc_html__( 'fadeInUpBig', 'plugin-hundimauto' ),
 				],
 				'selectors' => [
 
@@ -78,7 +78,7 @@ class Elementor_Page_Title_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'hundimauto_page_title_animation_delay',
 			[
-				'label'			=> esc_html__( 'Verzögerung in Millisekunden (ms)', 'plugin_hundimauto' ),
+				'label'			=> esc_html__( 'Verzögerung in Millisekunden (ms)', 'plugin-hundimauto' ),
 				'type'			=> \Elementor\Controls_Manager::NUMBER,
 				'min'			=> 0,
 				'max'			=> 1000,
