@@ -31,7 +31,7 @@ class Elementor_Vimeo_Video_Widget extends \Elementor\Widget_Base {
 
 	protected function _register_controls() {
 
-	$this->start_controls_section(
+		$this->start_controls_section(
 			'hundimauto_vimeo_video_section_1',
 			[
 				'label' => esc_html__( 'Inhalt', 'plugin-hundimauto' ),
