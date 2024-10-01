@@ -245,9 +245,11 @@ final class Plugin {
 
 		require_once( __DIR__ . '/widgets/class-page-title.php' );
 		require_once( __DIR__ . '/widgets/class-contact-box.php' );
+		require_once( __DIR__ . '/widgets/class-video.php' );
 
 		$widgets_manager->register( new Elementor_Page_Title_Widget() );
 		$widgets_manager->register( new Elementor_Contact_Box_Widget() );
+		$widgets_manager->register( new Elementor_Vimeo_Video_Widget() );
 
 	}
 
