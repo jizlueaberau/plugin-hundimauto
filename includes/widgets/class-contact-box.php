@@ -190,7 +190,7 @@ class Elementor_Contact_Box_Widget extends \Elementor\Widget_Base {
 			<?php
 				if ( ( ! empty( $settings['hundimauto_contact_box_button_text'] ) ) &&
 					( ! empty( $settings['hundimauto_contact_box_button_url']['url'] ) ) ) {
-			?><div class="button"><button type="button" class="btn btn-primary" onlick="window.location.href='<?php echo $settings['hundimauto_contact_box_button_url']['url']; ?>'"><?php echo $settings['hundimauto_contact_box_button_text']; ?></button></div><?php
+			?><div class="button"><button type="button" class="btn btn-primary" onclick="window.location.href='<?php echo $settings['hundimauto_contact_box_button_url']['url']; ?>'"><?php echo $settings['hundimauto_contact_box_button_text']; ?></button></div><?php
 				}
 			?><div class="info"><?php
 				if ( ! empty( $settings['hundimauto_contact_box_info_text'] ) ) {
