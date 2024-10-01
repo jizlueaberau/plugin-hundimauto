@@ -131,7 +131,7 @@ class Elementor_Vimeo_Video_Widget extends \Elementor\Widget_Base {
 		}
 		?><div class="video-frame ratio ratio-16x9<?php echo $os_animation['class']; ?>"<?php echo $os_animation['data']; ?><?php echo $os_animation['delay']; ?><?php
 			if ( isset ( $settings['hundimauto_vimeo_video_fb_image'][0] ) && !empty ( $settings['hundimauto_vimeo_video_fb_image'][0]['url'] ) ) {
-				echo " style=\"background-image:url('". $settings['hundimauto_vimeo_video_fb_image'][0]['url'] . "'\"";
+				echo " style=\"background-image:url('". $settings['hundimauto_vimeo_video_fb_image'][0]['url'] . "')\"";
 			}
 			?>><iframe src="<?php 
 			echo self::VIMEO_PLAYER . $settings['hundimauto_vimeo_video_id'];
