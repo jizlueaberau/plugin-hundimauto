@@ -40,18 +40,19 @@ class Elementor_LinkBox_Image_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'hundimauto_linkbox_image_id',
 			[
-				'label'			=> esc_html__( 'Bild', 'plugin-hundimauto' ),
+				'label'			=> esc_html__( 'Bild (Format 4:3)', 'plugin-hundimauto' ),
 				'type'			=> \Elementor\Controls_Manager::MEDIA,
 				'default'		=> [
 					'url'		=> \Elementor\Utils::get_placeholder_image_src()
-				]
+				],
+				'description'	=> esc_html__( 'Wichtig: die Höhe der Bilder sollte im Raster identisch sein.')
 			]
 		);
 
 		$this->add_control(
 			'hundimauto_linkbox_image_overlay_text',
 			[
-				'label' 		=> esc_html__( 'Text', 'plugin-hundimauto' ),
+				'label' 		=> esc_html__( 'Overlay Text', 'plugin-hundimauto' ),
 				'type'			=> \Elementor\Controls_Manager::TEXT,
 				'default'		=> '',
 				'placeholder'	=> ''
@@ -61,9 +62,10 @@ class Elementor_LinkBox_Image_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'hundimauto_linkbox_image_url',
 			[
-				'label' 		=> esc_html__( 'URL', 'plugin-hundimauto' ),
+				'label' 		=> esc_html__( 'Verweis auf diese URL (Seite)', 'plugin-hundimauto' ),
 				'type'			=> \Elementor\Controls_Manager::URL,
 				'options'		=> [ 'url' ],
+				'placeholder'	=> esc_html__( 'z. B. /produkte-nach-mass/hundegitter-nach-mass', 'plugin-hundimauto' ),
 				'default'		=> [
 					'url'			=> ''
 				],
