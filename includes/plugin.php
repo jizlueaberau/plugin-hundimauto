@@ -244,11 +244,13 @@ final class Plugin {
 	public function register_widgets( $widgets_manager ) {
 
 		require_once( __DIR__ . '/widgets/class-page-title.php' );
+		require_once( __DIR__ . '/widgets/class-section-title.php' );
 		require_once( __DIR__ . '/widgets/class-contact-box.php' );
 		require_once( __DIR__ . '/widgets/class-video.php' );
 		require_once( __DIR__ . '/widgets/class-linkbox-image.php' );
 
 		$widgets_manager->register( new Elementor_Page_Title_Widget() );
+		$widgets_manager->register( new Elementor_Section_Title_Widget() );
 		$widgets_manager->register( new Elementor_Contact_Box_Widget() );
 		$widgets_manager->register( new Elementor_Vimeo_Video_Widget() );
 		$widgets_manager->register( new Elementor_LinkBox_Image_Widget() );

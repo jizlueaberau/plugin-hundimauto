@@ -5,14 +5,14 @@ namespace Plugin_Hundimauto;
  * Hundimauto Page Title Widget
  */
 
-class Elementor_Page_Title_Widget extends \Elementor\Widget_Base {
+class Elementor_Section_Title_Widget extends \Elementor\Widget_Base {
 
 	public function get_name() {
-		return "HiA Page Title";
+		return "HiA Section Title";
 	}
 
 	public function get_title() {
-		return esc_html__( 'HiA Page Title', 'plugin-hundimauto' );
+		return esc_html__( 'HiA Section Title', 'plugin-hundimauto' );
 	}
 
 	public function get_icon() {
@@ -24,13 +24,13 @@ class Elementor_Page_Title_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_keywords() {
-		return [ 'hia', 'header', 'title', 'page' ];
+		return [ 'hia', 'header', 'title', 'section' ];
 	}
 
 	protected function _register_controls() {
 
 		$this->start_controls_section(
-			'hundimauto_page_title_section_1',
+			'hundimauto_section_title_section_1',
 			[
 				'label' => esc_html__( 'Inhalt', 'plugin-hundimauto' ),
 				'tab'	=> \Elementor\Controls_Manager::TAB_CONTENT
@@ -38,7 +38,7 @@ class Elementor_Page_Title_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'hundimauto_page_title_content',
+			'hundimauto_section_title_content',
 			[
 				'label' 		=> esc_html__( 'Titel', 'plugin-hundimauto' ),
 				'type'			=> \Elementor\Controls_Manager::WYSIWYG,
@@ -50,7 +50,7 @@ class Elementor_Page_Title_Widget extends \Elementor\Widget_Base {
 		$this->end_controls_section();
 
 		$this->start_controls_section(
-			'hundimauto_page_title_section_2',
+			'hundimauto_section_title_section_2',
 			[
 				'label' => esc_html__( 'Animation', 'plugin-hundimauto' ),
 				'tab'	=> \Elementor\Controls_Manager::TAB_CONTENT
@@ -58,7 +58,7 @@ class Elementor_Page_Title_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'hundimauto_page_title_animation',
+			'hundimauto_section_title_animation',
 			[
 				'label' 		=> esc_html__( 'Stil', 'plugin-hundimauto' ),
 				'type'			=> \Elementor\Controls_Manager::SELECT,
@@ -76,7 +76,7 @@ class Elementor_Page_Title_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'hundimauto_page_title_animation_delay',
+			'hundimauto_section_title_animation_delay',
 			[
 				'label'			=> esc_html__( 'Verzögerung in Millisekunden (ms)', 'plugin-hundimauto' ),
 				'type'			=> \Elementor\Controls_Manager::NUMBER,
@@ -98,19 +98,19 @@ class Elementor_Page_Title_Widget extends \Elementor\Widget_Base {
 			'delay'		=> ''
 		];
 
-		if ( empty( $settings['hundimauto_page_title_content'] ) ) {
+		if ( empty( $settings['hundimauto_section_title_content'] ) ) {
 			return;
 		}
 
-		if ( $settings['hundimauto_page_title_animation'] !== 'none' ) {
+		if ( $settings['hundimauto_section_title_animation'] !== 'none' ) {
 			$os_animation['class'] 	= ' os-animation';
-			$os_animation['data']	= ' data-animation="animate__' . $settings['hundimauto_page_title_animation'] . '"';
-			$os_animation['delay']	= ' data-delay="' . $settings['hundimauto_page_title_animation_delay'] . 'ms"';
+			$os_animation['data']	= ' data-animation="animate__' . $settings['hundimauto_section_title_animation'] . '"';
+			$os_animation['delay']	= ' data-delay="' . $settings['hundimauto_section_title_animation_delay'] . 'ms"';
 		}
 
-		?><div class="page-title<?php echo $os_animation['class']; ?>"<?php echo $os_animation['data']; ?><?php echo $os_animation['delay']; ?>>
+		?><div class="section-title<?php echo $os_animation['class']; ?>"<?php echo $os_animation['data']; ?><?php echo $os_animation['delay']; ?>>
 			<hgroup>
-				<?php echo $settings['hundimauto_page_title_content']; ?>
+				<?php echo $settings['hundimauto_section_title_content']; ?>
 			</hgroup>
 		</div>
 		<?php
