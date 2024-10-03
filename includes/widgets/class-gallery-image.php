@@ -2,7 +2,7 @@
 namespace Plugin_Hundimauto;
 
 /**
- * Hundimauto Vimeo Video Widget
+ * Hundimauto Gallery Image Widget
  */
 
 class Elementor_Gallery_Image_Widget extends \Elementor\Widget_Base {
