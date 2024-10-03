@@ -91,8 +91,8 @@ class Elementor_LinkBox_Image_Widget extends \Elementor\Widget_Base {
 				'default'		=> 'none',
 				'options'		=> [
 					'none'					=> esc_html__( 'None', 'plugin-hundimauto' ),
-					'bounceInLeft'				=> esc_html__( 'Bounce in Left', 'plugin-hundimauto' ),
-					'bounceInRight'				=> esc_html__( 'Bounce in Right', 'plugin-hundimauto' ),
+					'fadeInLeft'				=> esc_html__( 'Fade in Left', 'plugin-hundimauto' ),
+					'fadeInRight'				=> esc_html__( 'Fade in Right', 'plugin-hundimauto' ),
 				],
 				'selectors' => [
 
