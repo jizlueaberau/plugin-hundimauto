@@ -126,9 +126,7 @@ class Elementor_Gallery_Image_Widget extends \Elementor\Widget_Base {
 		?>
 
 		<div class="gallery-image overflow-hidden<?php echo $os_animation['class']; ?>"<?php echo $os_animation['data']; ?><?php echo $os_animation['delay']; ?>>
-			<a href="<?php echo $imgURL; ?>" data-lightbox="gallery-source-id-<?php echo the_ID(); ?>" data-title="<?php echo $imgCaption; ?>">
-				<img src="<?php echo $imgURL; ?>" class="image w-100" alt="<?php echo $imgCaption; ?>">
-			</a>
+			<a href="#" data-bs-toggle="modal" data-bs-target="#mediaModal" data-media-type="image" data-media-src="<?php echo $imgURL; ?>" data-media-ratio="4x3" data-media-title="<?php echo $imgCaption; ?>"><img src="<?php echo $imgURL; ?>" class="image w-100" alt="<?php echo $imgCaption; ?>"></a>
 		</div><?php
 	}
 	

@@ -18,7 +18,7 @@ class Elementor_Vimeo_Video_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-video-camera';
+		return 'eicon-youtube';
 	}
 
 	public function get_categories() {
