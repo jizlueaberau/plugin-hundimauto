@@ -16,7 +16,7 @@ class Elementor_Product_Item_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-image';
+		return 'eicon-site-identity';
 	}
 
 	public function get_categories() {

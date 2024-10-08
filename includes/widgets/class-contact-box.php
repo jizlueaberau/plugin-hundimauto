@@ -16,7 +16,7 @@ class Elementor_Contact_Box_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-mail';
+		return 'eicon-button';
 	}
 
 	public function get_categories() {

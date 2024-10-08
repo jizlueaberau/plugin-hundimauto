@@ -16,7 +16,7 @@ class Elementor_Page_Title_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-site-title';
+		return 'eicon-archive-title';
 	}
 
 	public function get_categories() {

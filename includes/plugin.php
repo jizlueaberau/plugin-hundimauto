@@ -250,6 +250,7 @@ final class Plugin {
 		require_once( __DIR__ . '/widgets/class-linkbox-image.php' );
 		require_once( __DIR__ . '/widgets/class-gallery-image.php' );
 		require_once( __DIR__ . '/widgets/class-product-item.php' );
+		require_once( __DIR__ . '/widgets/class-testimonial-carousel.php' );
 
 		$widgets_manager->register( new Elementor_Page_Title_Widget() );
 		$widgets_manager->register( new Elementor_Section_Title_Widget() );
@@ -258,6 +259,7 @@ final class Plugin {
 		$widgets_manager->register( new Elementor_LinkBox_Image_Widget() );
 		$widgets_manager->register( new Elementor_Gallery_Image_Widget() );
 		$widgets_manager->register( new Elementor_Product_Item_Widget() );
+		$widgets_manager->register( new Elementor_Testimonial_Carousel_Widget() );
 
 	}
 

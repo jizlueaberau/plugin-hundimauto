@@ -16,7 +16,7 @@ class Elementor_LinkBox_Image_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-link';
+		return 'eicon-image-rollover';
 	}
 
 	public function get_categories() {
