@@ -69,6 +69,16 @@ class Elementor_Product_Item_Widget extends \Elementor\Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'hundimauto_product_item_info_custom_code',
+			[
+				'label'			=> esc_html__( 'Custom HTML', 'plugin-hundimauto' ),
+				'type'			=> \Elementor\Controls_Manager::CODE,
+				'language'		=> 'html',
+				'rows'			=> 20
+			]
+		);
+
 		$this->end_controls_section();
 
 		$this->start_controls_section(
@@ -315,6 +325,7 @@ class Elementor_Product_Item_Widget extends \Elementor\Widget_Base {
 				<div class="product-info<?php echo $os_animation['text-item']['class']; ?>"<?php echo $os_animation['text-item']['data']; ?><?php echo $os_animation['text-item']['delay']; ?>>
 					<h3><?php echo $settings[ 'hundimauto_product_item_info_titel' ]; ?></h3>
 					<?php echo $settings[ 'hundimauto_product_item_info_text' ]; ?>
+					<?php echo $settings[ 'hundimauto_product_item_info_custom_code']; ?>
 				</div>
 			</article><!-- /end product-item -->
 
