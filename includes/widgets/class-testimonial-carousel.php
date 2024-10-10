@@ -133,7 +133,7 @@ class Elementor_Testimonial_Carousel_Widget extends \Elementor\Widget_Base {
 			<div class="elementor-element elementor-element-testimonial-widget elementor-pagination-position-outside elementor-widget elementor-widget-image-carousel" data-id="testimonial-widget" data-element_type="widget" data-settings="{&quot;slides_to_show&quot;:&quot;2&quot;,&quot;slides_to_show_mobile&quot;:&quot;1&quot;,&quot;slides_to_scroll&quot;:&quot;1&quot;,&quot;navigation&quot;:&quot;dots&quot;,&quot;autoplay&quot;:&quot;yes&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;infinite&quot;:&quot;no&quot;,&quot;speed&quot;:500}" data-widget_type="image-carousel.default">
 
 				<div class="elementor-widget-container">
-					<div class="elementor-image-carousel-wrapper swiper-container" dir="ltr">
+					<div class="elementor-image-carousel-wrapper swiper swiper-container" dir="ltr">
 						<div class="elementor-image-carousel swiper-wrapper" aria-live="off">
 							<?php
 								if ( $settings[ 'hundimauto_testimonial_list' ] ) {
