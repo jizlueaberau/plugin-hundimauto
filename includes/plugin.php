@@ -246,20 +246,24 @@ final class Plugin {
 		require_once( __DIR__ . '/widgets/class-page-title.php' );
 		require_once( __DIR__ . '/widgets/class-section-title.php' );
 		require_once( __DIR__ . '/widgets/class-contact-box.php' );
+		require_once( __DIR__ . '/widgets/class-content-box.php' );
 		require_once( __DIR__ . '/widgets/class-video.php' );
 		require_once( __DIR__ . '/widgets/class-linkbox-image.php' );
 		require_once( __DIR__ . '/widgets/class-gallery-image.php' );
 		require_once( __DIR__ . '/widgets/class-product-item.php' );
 		require_once( __DIR__ . '/widgets/class-testimonial-carousel.php' );
+		require_once( __DIR__ . '/widgets/class-link-button.php' );
 
 		$widgets_manager->register( new Elementor_Page_Title_Widget() );
 		$widgets_manager->register( new Elementor_Section_Title_Widget() );
 		$widgets_manager->register( new Elementor_Contact_Box_Widget() );
+		$widgets_manager->register( new Elementor_Content_Box_Widget() );
 		$widgets_manager->register( new Elementor_Vimeo_Video_Widget() );
 		$widgets_manager->register( new Elementor_LinkBox_Image_Widget() );
 		$widgets_manager->register( new Elementor_Gallery_Image_Widget() );
 		$widgets_manager->register( new Elementor_Product_Item_Widget() );
 		$widgets_manager->register( new Elementor_Testimonial_Carousel_Widget() );
+		$widgets_manager->register( new Elementor_Link_Button_Widget() );
 
 	}
 
