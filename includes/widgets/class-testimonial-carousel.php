@@ -122,6 +122,10 @@ class Elementor_Testimonial_Carousel_Widget extends \Elementor\Widget_Base {
 			'delay'		=> ''
 		];
 
+		if ( empty( $settings['hundimauto_testimonial_list'] ) ) {
+			return;
+		}
+
 		if ( $settings['hundimauto_testimonial_list_animation'] !== 'none' ) {
 			$os_animation['class'] 	= ' os-animation';
 			$os_animation['data']	= ' data-animation="animate__' . $settings['hundimauto_testimonial_list_animation'] . '"';

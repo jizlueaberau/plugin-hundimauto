@@ -40,12 +40,20 @@ class Elementor_Vimeo_Video_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'hundimauto_vimeo_video_id',
+			'hundimauto_vimeo_video_list',
 			[
-				'label' 		=> esc_html__( 'Video ID', 'plugin-hundimauto' ),
-				'type'			=> \Elementor\Controls_Manager::TEXT,
-				'default'		=> '',
-				'placeholder'	=> esc_html__( 'e.g. 1234567890', 'plugin-hundimauto' )
+				'label'			=> esc_html__( 'Videos', 'plugin-hundimauto' ),
+				'type'			=> \Elementor\Controls_Manager::REPEATER,
+				'fields'		=> [
+					[
+						'name'			=> 'video_id',
+						'label'			=> esc_html__( 'Vimeo ID', 'plugin-hundimauto' ),
+						'type'			=> \Elementor\Controls_Manager::TEXT,
+						'placeholder'	=> esc_html__( 'e.g. 123456789', 'plugin-hundimauto' )
+					]
+				],
+				'default'		=> [],
+				'title_field'	=> '{{{ name }}}'
 			]
 		);
 
@@ -104,6 +112,7 @@ class Elementor_Vimeo_Video_Widget extends \Elementor\Widget_Base {
 
 	protected function render() {
 		$settings = $this->get_settings_for_display();
+		$videos = [];
 		$video_settings = [
 			'autoplay' 	=> '1',
 			'loop'		=> '1',
@@ -120,9 +129,14 @@ class Elementor_Vimeo_Video_Widget extends \Elementor\Widget_Base {
 			'delay'		=> ''
 		];
 
-		if ( empty( $settings['hundimauto_vimeo_video_id'] ) ) {
+		if ( empty( $settings['hundimauto_vimeo_video_list'] ) ) {
 			return;
 		}
+
+		// populating and shuffeling video array container
+		foreach ( $settings['hundimauto_vimeo_video_list'] as $key => $value ) {
+			array_push( $videos, $value['video_id'] );
+		} shuffle( $videos );
 
 		if ( $settings['hundimauto_vimeo_video_animation'] !== 'none' ) {
 			$os_animation['class'] 	= ' os-animation';
@@ -134,7 +148,7 @@ class Elementor_Vimeo_Video_Widget extends \Elementor\Widget_Base {
 				echo " style=\"background-image:url('". $settings['hundimauto_vimeo_video_fb_image'][0]['url'] . "')\"";
 			}
 			?>><iframe src="<?php 
-			echo self::VIMEO_PLAYER . $settings['hundimauto_vimeo_video_id'];
+			echo self::VIMEO_PLAYER . array_pop( $videos );
 			// adding hash keys
 			$hash = "?";
 			foreach ($video_settings as $key => $value) {

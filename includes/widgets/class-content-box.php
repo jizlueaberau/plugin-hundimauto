@@ -116,6 +116,10 @@ class Elementor_Content_Box_Widget extends \Elementor\Widget_Base {
 			'delay'		=> ''
 		];
 
+		if ( empty( $settings['hundimauto_content_box_text'] ) ) {
+			return;
+		}
+
 		if ( $settings['hundimauto_content_box_animation'] !== 'none' ) {
 			$os_animation['class'] 	= ' os-animation';
 			$os_animation['data']	= ' data-animation="animate__' . $settings['hundimauto_content_box_animation'] . '"';

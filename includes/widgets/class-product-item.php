@@ -274,6 +274,10 @@ class Elementor_Product_Item_Widget extends \Elementor\Widget_Base {
 			]
 		];
 
+		if ( empty( $settings['hundimauto_product_item_info_titel'] ) ) {
+			return;
+		}
+
 		$imgID = $settings['hundimauto_product_item_id']['id'];
 
 		switch ( $settings['hundimauto_product_item_alignment'] ) {
