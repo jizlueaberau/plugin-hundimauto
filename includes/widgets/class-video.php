@@ -50,6 +50,12 @@ class Elementor_Vimeo_Video_Widget extends \Elementor\Widget_Base {
 						'label'			=> esc_html__( 'Vimeo ID', 'plugin-hundimauto' ),
 						'type'			=> \Elementor\Controls_Manager::TEXT,
 						'placeholder'	=> esc_html__( 'e.g. 123456789', 'plugin-hundimauto' )
+					],
+					[
+						'name'			=> 'video_title',
+						'label'			=> esc_html__( 'Vimeo Titel', 'plugin-hundimauto' ),
+						'type'			=> \Elementor\Controls_Manager::TEXT,
+						'placeholder'	=> esc_html__( '', 'plugin-hundimauto' )
 					]
 				],
 				'default'		=> [],
@@ -135,8 +141,8 @@ class Elementor_Vimeo_Video_Widget extends \Elementor\Widget_Base {
 
 		// populating and shuffeling video array container
 		foreach ( $settings['hundimauto_vimeo_video_list'] as $key => $value ) {
-			array_push( $videos, $value['video_id'] );
-		} shuffle( $videos );
+			array_push( $videos, [ $value['video_id'], $value['video_title'] ] );
+		} shuffle( $videos ); $video = array_pop( $videos );
 
 		if ( $settings['hundimauto_vimeo_video_animation'] !== 'none' ) {
 			$os_animation['class'] 	= ' os-animation';
@@ -148,14 +154,14 @@ class Elementor_Vimeo_Video_Widget extends \Elementor\Widget_Base {
 				echo " style=\"background-image:url('". $settings['hundimauto_vimeo_video_fb_image'][0]['url'] . "')\"";
 			}
 			?>><iframe src="<?php 
-			echo self::VIMEO_PLAYER . array_pop( $videos );
+			echo self::VIMEO_PLAYER . $video[0];
 			// adding hash keys
 			$hash = "?";
 			foreach ($video_settings as $key => $value) {
 				$hash .= $key . "=" . $value . "&";
 			}
 			echo substr_replace($hash, '', -1);
-		?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+		?>" frameborder="0" title="<?php echo $video[1]; ?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
 		<?php
 	}
 	
