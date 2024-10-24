@@ -77,8 +77,9 @@ class Elementor_Gallery_Image_Widget extends \Elementor\Widget_Base {
 				'default'		=> 'none',
 				'options'		=> [
 					'none'					=> esc_html__( 'None', 'plugin-hundimauto' ),
-					'fadeInLeft'				=> esc_html__( 'Fade in Left', 'plugin-hundimauto' ),
-					'fadeInRight'				=> esc_html__( 'Fade in Right', 'plugin-hundimauto' ),
+					'fadeInUp'				=> esc_html__( 'Fade in Up', 'plugin-hundimauto' ),
+					'fadeInLeft'			=> esc_html__( 'Fade in Left', 'plugin-hundimauto' ),
+					'fadeInRight'			=> esc_html__( 'Fade in Right', 'plugin-hundimauto' ),
 				],
 				'selectors' => [
 
