@@ -45,7 +45,7 @@ class Elementor_Gallery_Image_Widget extends \Elementor\Widget_Base {
 				'default'		=> [
 					'url'		=> \Elementor\Utils::get_placeholder_image_src()
 				],
-				'description'	=> esc_html__( 'Wichtig: die Höhe der Bilder sollte im Raster identisch sein.')
+				'description'	=> esc_html__( 'Wichtig: das Format der Bilder sollte innerhalb der Gallerie identisch sein.')
 			]
 		);
 
@@ -56,6 +56,25 @@ class Elementor_Gallery_Image_Widget extends \Elementor\Widget_Base {
 				'type'			=> \Elementor\Controls_Manager::TEXT,
 				'default'		=> '',
 				'placeholder'	=> ''
+			]
+		);
+
+		$this->add_control(
+			'hundimauto_gallery_image_media_modal_ratio',
+			[
+				'label' 		=> esc_html__( 'Modal Image Ratio', 'plugin-hundimauto' ),
+				'type'			=> \Elementor\Controls_Manager::SELECT,
+				'default'		=> '1x1',
+				'options'		=> [
+					'1x1'			=> esc_html__( '1:1', 'plugin-hundimauto' ),
+					'4x3'			=> esc_html__( '4:3', 'plugin-hundimauto' ),
+					'16x9'			=> esc_html__( '16:9', 'plugin-hundimauto' ),
+					'21x9'			=> esc_html__( '21:9', 'plugin-hundimauto' ),
+				],
+				'selectors' => [
+
+				],
+				'description'	=> esc_html__( 'Hinweis: Bestimmt das Format des Modals, wenn das Bild geöffnet wird.')
 			]
 		);
 
@@ -116,6 +135,7 @@ class Elementor_Gallery_Image_Widget extends \Elementor\Widget_Base {
 
 		$imgURL = $settings['hundimauto_gallery_image_id']['url'];
 		$imgCaption = $settings['hundimauto_gallery_image_caption'];
+		$modalRatio = $settings['hundimauto_gallery_image_media_modal_ratio'];
 
 
 		if ( $settings['hundimauto_gallery_image_animation'] !== 'none' ) {
@@ -127,7 +147,7 @@ class Elementor_Gallery_Image_Widget extends \Elementor\Widget_Base {
 		?>
 
 		<div class="gallery-image overflow-hidden<?php echo $os_animation['class']; ?>"<?php echo $os_animation['data']; ?><?php echo $os_animation['delay']; ?>>
-			<a href="#" data-bs-toggle="modal" data-bs-target="#mediaModal" data-media-type="image" data-media-src="<?php echo $imgURL; ?>" data-media-ratio="4x3" data-media-title="<?php echo $imgCaption; ?>"><img src="<?php echo $imgURL; ?>" class="image w-100" alt="<?php echo $imgCaption; ?>"></a>
+			<a href="#" data-bs-toggle="modal" data-bs-target="#mediaModal" data-media-type="image" data-media-src="<?php echo $imgURL; ?>" data-media-ratio="<?php echo $modalRatio; ?>" data-media-title="<?php echo $imgCaption; ?>"><img src="<?php echo $imgURL; ?>" class="image w-100" alt="<?php echo $imgCaption; ?>"></a>
 		</div><?php
 	}
 	
