@@ -63,16 +63,6 @@ class Elementor_Vimeo_Video_Widget extends \Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'hundimauto_vimeo_video_fb_image',
-			[
-				'label'			=> esc_html__( 'Loading Image', 'plugin-hundimauto' ),
-				'type'			=> \Elementor\Controls_Manager::GALLERY,
-				'show_label'	=> false,
-				'description'	=> 'Image displayed while laoding vimeo video.'
-			]
-		);
-
 		$this->end_controls_section();
 
 		$this->start_controls_section(
@@ -149,11 +139,9 @@ class Elementor_Vimeo_Video_Widget extends \Elementor\Widget_Base {
 			$os_animation['data']	= ' data-animation="animate__' . $settings['hundimauto_vimeo_video_animation'] . '"';
 			$os_animation['delay']	= ' data-delay="' . $settings['hundimauto_vimeo_video_animation_delay'] . 'ms"';
 		}
-		?><div class="video-frame ratio ratio-16x9<?php echo $os_animation['class']; ?>"<?php echo $os_animation['data']; ?><?php echo $os_animation['delay']; ?><?php
-			if ( isset ( $settings['hundimauto_vimeo_video_fb_image'][0] ) && !empty ( $settings['hundimauto_vimeo_video_fb_image'][0]['url'] ) ) {
-				echo " style=\"background-image:url('". $settings['hundimauto_vimeo_video_fb_image'][0]['url'] . "')\"";
-			}
-			?>><iframe data-cookieblock-src="<?php 
+		?><div class="video-frame ratio ratio-16x9<?php echo $os_animation['class']; ?>"<?php echo $os_animation['data']; ?><?php echo $os_animation['delay']; ?>><div class="cookieconsent-optout-marketing"><div class="box-inner"><img src="/wp-content/themes/wp-hundimauto/assets/images/no-video_17569034.png" class="icon w-100" alt="Video disabled" /><p>Sie müssen Marketing Cookies akzeptieren, um das Video zu sehen.</p><a href="javascript:Cookiebot.renew()" class="btn btn-primary">Cookie Einstellungen</a></div>
+			</div>
+		</div><iframe data-cookieblock-src="<?php 
 			echo self::VIMEO_PLAYER . $video[0];
 			// adding hash keys
 			$hash = "?";
