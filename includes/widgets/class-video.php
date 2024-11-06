@@ -139,7 +139,7 @@ class Elementor_Vimeo_Video_Widget extends \Elementor\Widget_Base {
 			$os_animation['data']	= ' data-animation="animate__' . $settings['hundimauto_vimeo_video_animation'] . '"';
 			$os_animation['delay']	= ' data-delay="' . $settings['hundimauto_vimeo_video_animation_delay'] . 'ms"';
 		}
-		?><div class="video-frame ratio ratio-16x9<?php echo $os_animation['class']; ?>"<?php echo $os_animation['data']; ?><?php echo $os_animation['delay']; ?>><div class="cookieconsent-optout-marketing"><div class="box-inner"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-video_17569034.png" class="icon w-100" alt="Video disabled" /><p>Sie müssen Marketing Cookies akzeptieren, um das Video zu sehen.</p><a href="javascript:Cookiebot.renew()" class="btn btn-primary">Cookie Einstellungen</a></div></div><iframe data-cookieblock-src="<?php 
+		?><div class="video-frame ratio ratio-16x9<?php echo $os_animation['class']; ?>"<?php echo $os_animation['data']; ?><?php echo $os_animation['delay']; ?>><div class="cookieconsent-optout-marketing"><div class="box-inner"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/no-video_17569034.png" class="icon w-100" alt="Video disabled" /><p>Um das Video zu sehen werden Marketing Cookies benötigt.</p><a href="javascript:Cookiebot.renew()" class="btn btn-primary">Cookie Einstellungen</a></div></div><iframe data-cookieblock-src="<?php 
 			echo self::VIMEO_PLAYER . $video[0];
 			// adding hash keys
 			$hash = "?";
