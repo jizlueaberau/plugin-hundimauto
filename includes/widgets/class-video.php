@@ -153,7 +153,7 @@ class Elementor_Vimeo_Video_Widget extends \Elementor\Widget_Base {
 			if ( isset ( $settings['hundimauto_vimeo_video_fb_image'][0] ) && !empty ( $settings['hundimauto_vimeo_video_fb_image'][0]['url'] ) ) {
 				echo " style=\"background-image:url('". $settings['hundimauto_vimeo_video_fb_image'][0]['url'] . "')\"";
 			}
-			?>><iframe src="<?php 
+			?>><iframe data-cookieblock-src="<?php 
 			echo self::VIMEO_PLAYER . $video[0];
 			// adding hash keys
 			$hash = "?";
@@ -161,7 +161,7 @@ class Elementor_Vimeo_Video_Widget extends \Elementor\Widget_Base {
 				$hash .= $key . "=" . $value . "&";
 			}
 			echo substr_replace($hash, '', -1);
-		?>" frameborder="0" title="<?php echo $video[1]; ?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+		?>" data-cookieconsent="marketing" frameborder="0" title="<?php echo $video[1]; ?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
 		<?php
 	}
 	
